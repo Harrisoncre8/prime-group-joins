@@ -1,4 +1,10 @@
+-- BASE MODE
+
 -- 1. Get all customers and their addresses.
+SELECT * FROM "addresses"
+JOIN "customers" ON "customers"."id" = "addresses"."customer_id" 
+GROUP BY "addresses"."id", "customers"."id"
+ORDER BY "addresses"."id";
 
 -- 2. Get all orders and their line items (orders, quantity and product).
 
@@ -13,3 +19,13 @@
 -- 7. How many products do we carry?
 
 -- 8. What is the total available on-hand quantity of diet pepsi?
+
+-- STRETCH GOALS
+
+-- How much was the total cost for each order?
+
+-- How much has each customer spent in total?
+
+-- How much has each customer spent in total? 
+-- Customers who have spent $0 should still show up in the table. 
+-- It should say 0, not NULL (research coalesce).
