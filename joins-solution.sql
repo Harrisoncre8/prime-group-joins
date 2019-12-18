@@ -26,8 +26,7 @@ WHERE "products"."description" = 'diet pepsi';
 -- Answer: alpha, delta, gamma
 
 -- 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
-SELECT COUNT("orders"."address_id"), "customers"."first_name", "customers"."last_name" FROM "line_items"
-JOIN "orders" ON "orders"."id" = "line_items"."order_id"
+SELECT COUNT("orders"."address_id"), "customers"."first_name", "customers"."last_name" FROM "orders"
 JOIN "addresses" ON "addresses"."id" = "orders"."address_id"
 JOIN "customers" ON "customers"."id" = "addresses"."customer_id"
 GROUP BY "customers"."id";
